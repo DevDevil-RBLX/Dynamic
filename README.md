@@ -1,77 +1,59 @@
+<div align="center">
 
+<img width="250px" src="https://cdn.discordapp.com/attachments/1121942874871824518/1121943072876536000/image.png">
 
-![Frame_1_6](https://github.com/NebulaServices/Dynamic/assets/81369743/373dc333-ff38-46c7-90f7-bd34899a6807)
-![Version](https://img.shields.io/badge/status-BETA-build) 
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
-[![License](https://img.shields.io/github/license/NebulaServices/Dynamic.svg)](https://github.com/NebulaServices/Dynamic/blob/main/LICENSE)
-[![TypeScript](https://badgen.net/badge/icon/typescript?icon=typescript&label)](https://typescriptlang.org)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+# SuperNova
+
+SuperNova is a very fast proxy using **dynamic** If you would like to deploy and make links for your friends, SuperNova has user friendly step by step process on how to install, and **deploy for free**, and paid services!.
+
+[Features](#features) •
+[Deployment](#deployment) •
+[Contributing](#contributing)
+
+![SuperNova](https://media.discordapp.net/attachments/1123937882168623135/1126338198847627384/image.png?width=1440&height=627)
+
+</div>
 
 ## Features
 
-- Customizable and easily configurable
-- Seriously Simple to use
-- Highly supportive, and supports your favorite sites:
-    - Google (login and suite apps)
-    - Youtube 
-    - Discord
-    - TikTok
-    - And so much more
-- Diabolically fast
-- Written in TypeScript
+- Apps
+- Games
+- Proxy
+- Cloaks
+- Cheats
 
-## Implementation
-See [Examples](https://github.com/NebulaServices/Dynamic/tree/main/examples);
+### Shortcuts
 
-## Getting started (How to run)
+SuperNova comes with shortcuts to quickly hide your 'work' by replacing it with a math, english, or science website that are convincing!
 
-### Method 1
+- `Alt + M` - Quickly open a random math cloak in our proxy
+- `Alt + S` - Opens a science cloak in our proxy
+- `Alt + E` - Opens an English cloak in our proxy
 
-1. Clone and change directory into Dynamic
+- PS- There's like 100+ links for those shortcuts.
+
+## Deployment
+
+### Quick Deployment Options
+
+SuperNova will not be the one to put a blame on if you deploy our project to replit, glitch, etc ; and get your account deleted.
+
+### Normal Deployment (Recommended)
+
+- [NodeJS version >=18](https://nodejs.org/)
+
 ```bash
-git clone https://github,com/NebulaServices/Dynamic.git && cd Dynamic
-```
-
-2. Run bash script and follow the instructions in the script
-```bash
-./bin/start.sh
-```
-
-
-### Method 2 
-
-1. Clone and change directory into Dynamic
-```bash
-git clone https://GitHub.com/NebulaServices/Dynamic.git && cd Dynamic
-```
-
-2. Install dependencies
-```bash
-npm i 
-```
-
-3. Build Dynamic Bundles
-```bash
-npm run build
-```
-
-4. Run the server
-```bash
+git clone https://github.com/SuperNova-Network/SuperNova-DY.git
+cd SuperNova-DY
+npm install
 npm start
+
 ```
 
-## Notice 
+## Contributing
 
-Hi there, we're launching this project in **early public beta**. Behind the scenes we're working hard at rewriting and bug fixes. Thanks for understanding. 
+SuperNova is still fairly new to this universe, and we would love to have your support to grow our small but growing community!
 
-## Developer support 
-We have our very own developer support server! Join with this link: https://discord.gg/shESgmwt3M
+## Credits
 
-## Authors
-
-- [@Sylvie](https://www.github.com/Sylvie-TN) - Lead developer
-- [@GreenyDev](https://github.com/GreenyDEV) - Documentation, project manager
-
-
-Made with ❤️ By Nebula Services 
 

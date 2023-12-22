@@ -17,7 +17,7 @@ if (!existsSync("./dist")) await import("./esbuild.prod.js");
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 7070;
 const _v = process.env.npm_package_version;
 const info = { 
   hashShort: `${JSON.stringify(gitCommitInfo().shortHash).replace('"', "").replace("/", "").replace('\"', "")}`,
@@ -68,7 +68,7 @@ fastify.listen({ port }, async (err) => {
     console.log(chalk.bold.red(`[Dynamic ${_v}] `) + "An error occurred while starting the server! \n" + err);
     process.exit(1);
   }
-  console.log(chalk.bold('Thanks for using Dynamic!'), chalk.red(`Please notice that ${chalk.red.bold('dynamic is currently in public BETA')}. please report all issues to the GitHub page. `))
+  console.log(chalk.bold('Thanks for using SuperNova!'), chalk.red(`Please notice that the proxy that this project uses, ${chalk.red.bold('dynamic, is currently in public BETA')}. please report all issues to the GitHub page of Dynamic, and Supernova. `))
   console.log(chalk.green.bold(`Dynamic ${_v} `) + "live at port " + chalk.bold.green(port));
   try {
     await open(URL);
