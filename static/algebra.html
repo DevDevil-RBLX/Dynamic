@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--test commits2 :)-->
+<!--test1-->
 <html lang="en" >
 <head>
 
@@ -7,15 +7,9 @@
   <title>What is a supernova? | Space</title>
 
   <!-- CSS -->
-
-  
   <link rel="stylesheet" href="resources/main.css">
-  <!--<link rel="stylesheet" href="resources/classicTheme/classicMain.css">-->
-
   <link rel="stylesheet" href="resources/icons.css">
-  <!--<link rel="stylesheet" href="resources/classicTheme/classicIcons.css">-->
-
-  <link rel="stylesheet" href="resources/discord.css">
+  <link rel="stylesheet" href="resources/apps.css">
   <link rel="stylesheet" href="resources/popup1.css">
   <link rel="stylesheet" href="resources/popup2.css">
   <link rel="stylesheet" href="resources/checkbox-slider.css">
@@ -28,15 +22,15 @@
   <script src="/resources/scripts/setting-columns/gallery.js"></script>
   <script src="/resources/scripts/popup.js"></script>
   <script src="/resources/scripts/popup2.js"></script>
-  <script src="/resources/scripts/burger.js"></script>
+
   <script src="/resources/scripts/shortcuts.js"></script>
-  <script src="/resources/scripts/cloak.js"></script>
+  <script src="/resources/scripts/burger.js"></script>
   <script src="/resources/scripts/time.js"></script>
   <script src="/resources/scripts/NHA.js"></script>
   <script src="/science-mathematics/uv.bundle.js"></script>
   <script src="/science-mathematics/uv.bundle.js"></script>
-  <script src="/resources/scripts/cloak.js"></script>
-  <script src="/resources/scripts/particles.js"></script>
+  <script src="/resources/scripts/go.js"></script>
+  <script src="/resources/scripts/index.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
 	new Crate({
@@ -71,14 +65,7 @@
 </head>
 
 <body onload="displayTime()">
-
 	<script src="https://kit.fontawesome.com/1237c86ba0.js" crossorigin="anonymous"></script>
-
-	<div class="popup">
-	  <span class="popup-close">X</span>
-	  <h2>Have any questions?</h2>
-	  <p>Please check out our GitHub for the wiki and instructions in the README document. </br> </br> Another way to get in contact for more detailed questions or site problems is to join our Discord and contact our staff or create a ticket. </br> <a style="top: 241px;left: 179px;position: absolute;" href="https://dsc.gg/supernovaproxy" class="popup-a" target="_blank">https://dsc.gg/supernovaproxy</a> </br> </br> In case you have forgotten about our GitHub, here is the link:</p> <a style="font-size: 26px !important;" href="https://github.com/SuperNova-Network/SuperNova-DY" class="popup-a" target="_blank">https://github.com/SuperNova-Network/SuperNova-DY</a>
-	</div>
 
 	<div class="popup2" id="settingsPopup">
 		<span class="popup-close2">X</span>
@@ -133,72 +120,67 @@
 			<!------------------------>
 
 			<script>
-toastr.options = {
-	"closeButton": false,
-	"debug": false,
-	"newestOnTop": false,
-	"progressBar": true,
-	"positionClass": "toast-bottom-left",
-	"preventDuplicates": false,
-	"onclick": null,
-	"showDuration": "300",
-	"hideDuration": "1000",
-	"timeOut": "5000",
-	"extendedTimeOut": "1000",
-	"showEasing": "swing",
-	"hideEasing": "linear",
-	"showMethod": "fadeIn",
-	"hideMethod": "fadeOut"
-};
-
-document.addEventListener("DOMContentLoaded", function() {
-	const lastBackground = localStorage.getItem("backgroundImage");
-	if (lastBackground) {
-		document.body.style.backgroundImage = `url('${lastBackground}')`;
-		document.getElementById("imageUrl").value = lastBackground;
-		document.getElementById("canvas").style.display = "none";
-		
-	}
-});
-
-function changeBackground() {
-	document.getElementById("canvas").style.display = "none";
-	const imageUrl = document.getElementById("imageUrl").value.trim();
-	if (imageUrl === "") {
-		toastr.error("Please enter an image URL.", "Error");
-		return;
-	}
-
-	const img = new Image();
-	img.onload = function() {
-		document.body.style.backgroundImage = `url('${imageUrl}')`;
-		localStorage.setItem("backgroundImage", imageUrl);
-		toastr.success("Your changes have been saved.", "Success!");
-	};
-
-	img.onerror = function() {
-		toastr.error("Please recheck your spelling or URL.", "Error");
-	};
-
-	img.src = imageUrl;
-}
-
-function resetBackground() {
-	toastr.success("Your changes have been saved.", "Background has been reset!");
-	document.body.style.backgroundColor = "#111";
-	document.body.style.backgroundImage = "";
-	document.getElementById("canvas").style.display = "block";
-	localStorage.removeItem("backgroundImage");
-	document.getElementById("imageUrl").value = "";
-}
-
-			</script>
+				toastr.options = {
+					"closeButton": false,
+					"debug": false,
+					"newestOnTop": false,
+					"progressBar": true,
+					"positionClass": "toast-bottom-left",
+					"preventDuplicates": false,
+					"onclick": null,
+					"showDuration": "300",
+					"hideDuration": "1000",
+					"timeOut": "5000",
+					"extendedTimeOut": "1000",
+					"showEasing": "swing",
+					"hideEasing": "linear",
+					"showMethod": "fadeIn",
+					"hideMethod": "fadeOut"
+				};
+				
+				document.addEventListener("DOMContentLoaded", function() {
+					const lastBackground = localStorage.getItem("backgroundImage");
+					if (lastBackground) {
+						document.body.style.backgroundImage = `url('${lastBackground}')`;
+						document.getElementById("imageUrl").value = lastBackground;
+						
+					}
+				});
+				
+				function changeBackground() {
+					const imageUrl = document.getElementById("imageUrl").value.trim();
+					if (imageUrl === "") {
+						toastr.error("Please enter an image URL.", "Error");
+						return;
+					}
+				
+					const img = new Image();
+					img.onload = function() {
+						document.body.style.backgroundImage = `url('${imageUrl}')`;
+						localStorage.setItem("backgroundImage", imageUrl);
+						toastr.success("Your changes have been saved.", "Success!");
+					};
+				
+					img.onerror = function() {
+						toastr.error("Please recheck your spelling or URL.", "Error");
+					};
+				
+					img.src = imageUrl;
+				}
+				
+				function resetBackground() {
+					toastr.success("Your changes have been saved.", "Background has been reset!");
+					document.body.style.backgroundColor = "#111";
+					document.body.style.backgroundImage = "";
+					localStorage.removeItem("backgroundImage");
+					document.getElementById("imageUrl").value = "";
+				}
+				
+							</script>
 
 		</div>
 	</div>
-	
 	  
-
 	<header id="site-header">
 		<h1><a  class="supernova" style="cursor: default;" href="./">SuperNova</a></h1>
 		<h2 style="margin-top: 1px;">Cheating and bypassing network.</h2>
@@ -210,13 +192,13 @@ function resetBackground() {
 			<path class="line middle" d="m 30,50 h 40" />
 			<path class="line bottom" d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
 		</svg>
-		<div class="clearfloat"></div>
+
 	</header>
 
-	<div style="z-index: 99;" id="sidebarMenu">
+	<div style="z-index: 99; margin-top: -33px !important; background-color: #111111ed !important;" id="sidebarMenu">
 		<ul style="height: 675px; overflow: auto;"  class="sidebarMenuInner">
 
-		 <li class="buttons" onclick="window.location.href = './socialstudys.html.html';">
+		 <li class="buttons" onclick="window.location.href = './socialstudys.html';">
 			<i class="fa-brands fa-discord"></i>
 			<a class="nointerfere" target="_blank">Discord</a></li> </a>
 		 </li>
@@ -253,50 +235,131 @@ function resetBackground() {
 
 	<!-- Middle page -->
 
-	
-
-	<div class="main">
-		<img src="/resources/img/SuperNova.png"  height="180px" width="180px">
-		<h1 class="math">Mathematics Practice</h1>
-		<form action="/service/route" method="POST" id="uform">
-			<input placeholder="Search the web privately" class="searchbar" title="query" name="url" autocomplete="off" >
-		</form>
+	<div style="display: flex; justify-content: center; margin-top: 124px;">
+		<input class="searchbar" id="searchbar" name="search" placeholder="Search apps" tag="searchbar" type="text">	
 	</div>
-<style>
- .middlepagething {
-	margin-bottom: 120px;
- }
-</style>
 
-<script src="/resources/scripts/index.js"></script>
-	
+	<div class="container-apps">
+
+		<!-- Divider -->
+
+		<div class="column">
+			<a onclick="go('https://search.brave.com')">
+			  <img height="145" src="/resources/img/icons/brave.webp">
+			  <p>Brave</p>
+			</a>
+		  </div>
+		  <div class="column">
+			<a onclick="go('https://chatgptproxy.me')">
+			  <img style="box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.50);" width="145" height="145" src="/resources/img/icons/chatgpt.png">
+			  <p>Chat GPT</p>
+			</a>
+		  </div>
+		  <div class="column">
+			<a onclick="go('https://discord.com')">
+			  <img style="box-shadow: 0px 0px 15px 0px rgb(88 101 242);" width="145" height="145" src="/resources/img/icons/discord.jpg">
+			  <p>Discord</p>
+			</a>
+		  </div>
+		  <div class="column">
+			<a onclick="go('https://play.geforcenow.com')">
+			  <img style="box-shadow: 0px 0px 15px 0px rgb(120 186 2);" width="145" height="145" src="/resources/img/icons/gfn.png">
+			  <p>Geforce NOW</p>
+			</a>
+		  </div>
+		  <div class="column">
+			<a onclick="go('https://github.com')">
+			  <img width="145" height="145" src="/resources/img/icons/github.png">
+			  <p>Github</p>
+			</a>
+		  </div>
+		  <div class="column">
+			<a onclick="go('https://google.com')">
+			  <img style="box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.50);" width="145" height="145" src="/resources/img/icons/google.webp">
+			  <p>Google</p>
+			</a>
+		  </div>
+		  <div class="column">
+			<a onclick="go('https://twitch.tv')">
+			  <img style="box-shadow: 0px 0px 15px 0px rgb(146 69 255);" width="145" height="145" src="/resources/img/icons/twitch.png">
+			  <p>Twitch</p>
+			</a>
+		  </div>
+		  <div class="column">
+			<a onclick="go('https://youtube.com')">
+			  <img style="box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.50);" width="145" height="145" src="/resources/img/icons/youtube.png">
+			  <p>YouTube</p>
+			</a>
+		  </div>
+		  <div class="column">
+			<a onclick="go('https://snapchat.com')">
+			  <img style="box-shadow: 0px 0px 15px 0px rgb(233 247 47);" width="145" height="145" src="https://github.com/DevDevil-RBLX/mathematics/blob/main/static/assets/images/icons/apps/snapchat.png?raw=true">
+			  <p>SnapChat</p>
+			</a>
+		  </div>
+		  <div class="column">
+			<a onclick="go('https://soundcloud.com')">
+			  <img style="box-shadow: 0px 0px 15px 0px rgb(252 85 0);" width="145" height="145" src="https://github.com/DevDevil-RBLX/mathematics/blob/main/static/assets/images/icons/apps/soundcloud.jpg?raw=true">
+			  <p>SoundCloud</p>
+			</a>
+		  </div>
+		  <div class="column">
+			<a onclick="go('https://reddit.com')">
+			  <img style="box-shadow: 0px 0px 15px 0px rgb(255 69 0);" width="145" height="145" src="https://github.com/DevDevil-RBLX/mathematics/blob/main/static/assets/images/icons/apps/reddit.png?raw=true">
+			  <p>Reddit</p>
+			</a>
+		  </div>
+		  <div class="column">
+			<a onclick="go('https://tumblr.com')">
+			  <img style="	background-color: #001935;" width="145" height="145" src="https://github.com/DevDevil-RBLX/mathematics/blob/main/static/assets/images/icons/apps/tumblr.png?raw=true">
+			  <p>Tumblr</p>
+			</a>
+		  </div>
+		  <div class="column">
+			<a onclick="go('https://pixlr.com')">
+			  <img width="145" height="145" src="https://github.com/DevDevil-RBLX/mathematics/blob/main/static/assets/images/icons/pix.png">
+			  <p>Pixlr</p>
+			</a>
+		  </div>
+		<!-- Divider end -->
+    	</div> <!-- End of apps 1 -->
+
+
+	<!-- Start of long apps -->
+		
+	<div class="container-apps" >
+
+
+		<div class="column2" style="width: 305px;">
+		 <a onclick="go('https://spotify.com')">
+		   <img style="box-shadow: 0px 0px 15px 0px rgb(110 210 115);" width="305" height="145" src="https://cdn.discordapp.com/attachments/828071279424307221/1116164646039203931/image.png">
+		   <p style="margin-left: 78px;">Spotify</p>
+		  </a>
+		</div>
+
+		<div class="column2" style="width: 305px;">
+			<a onclick="go('https://poki.com')">
+			  <img style="box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.50);" width="305" height="145" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1ca66880-ed9a-450f-a10d-b25ecbd8e02c/dfuyvxm-2629f38e-8292-4941-b0f6-76fd2809c628.png/v1/fill/w_1192,h_670/poki_new_look_v2_by_embeddedrook39_dfuyvxm-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvMWNhNjY4ODAtZWQ5YS00NTBmLWExMGQtYjI1ZWNiZDhlMDJjXC9kZnV5dnhtLTI2MjlmMzhlLTgyOTItNDk0MS1iMGY2LTc2ZmQyODA5YzYyOC5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.r-HPmkOp6zUapc8EaM-3-xauUQA38W-_dRcEPwFFsJc">
+			  <p style="margin-left: 78px;">Poki</p>
+			 </a>
+		</div>
+
+		<div class="column2" style="width: 305px;">
+			<a onclick="go('https://pinterest.com')">
+			  <img style="box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.50);" width="305" height="145" src="https://cdn.discordapp.com/attachments/828071279424307221/1116168134760595486/image.png">
+			  <p style="margin-left: 78px;">Pinterest</p>
+			 </a>
+		</div>
+
+	</div>
+
+	<!-- End of long apps -->
+
+	<div id="particles-js"></div>
+
+
 	<!-- Middle page end -->
-	
-	<ul class="wrapper">
-		<li class="icon facebook">
-		  <span class="tooltip">Discord</span>
-		  <span><i class="fab fa-discord"></i></span>
-		</li>
-		<li class="icon twitter">
-		  <span class="tooltip">Twitter</span>
-		  <span><i class="fab fa-twitter"></i></span>
-		</li>
-		<li class="icon instagram">
-		  <span class="tooltip">Instagram</span>
-		  <span><i class="fab fa-instagram"></i></span>
-		</li>
-		<li class="icon github">
-		  <span class="tooltip">Github</span>
-		  <span><i class="fab fa-github"></i></span>
-		</li>
-		<li class="icon youtube">
-		  <span class="tooltip">Youtube</span>
-		  <span><i class="fab fa-youtube"></i></span>
-		</li>
-	  </ul>
 
-	 <canvas id="canvas"></canvas>	
-	  
 
 	<!-- Partial -->
 
