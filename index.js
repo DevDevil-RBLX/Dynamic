@@ -59,7 +59,7 @@ fastify.register(fastifyCompress, {
   encodings: ["br"]
 });
 
-const URL = `http://localhost:${port}/`;
+const URL = `http://0.0.0.0:${port}/`;
 fastify.listen({ port }, async (err) => {
   if (err && err.code === "EADDRINUSE") {
     console.log(chalk.red.bold(`[Dynamic ${_v}] `) + "Port is already in use! Please close any apps using port " + chalk.bold.underline.red(port) + " and try again.");
