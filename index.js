@@ -17,7 +17,7 @@ if (!existsSync("./dist")) await import("./esbuild.prod.js");
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-const port = 443;
+const port = process.env.PORT || 7070;
 const _v = process.env.npm_package_version;
 const info = { 
   hashShort: `${JSON.stringify(gitCommitInfo().shortHash).replace('"', "").replace("/", "").replace('\"', "")}`,
@@ -59,7 +59,7 @@ fastify.register(fastifyCompress, {
   encodings: ["br"]
 });
 
-const URL = `http://0.0.0.0:${port}/`;
+const URL = `http://localhost:${port}/`;
 fastify.listen({ port }, async (err) => {
   if (err && err.code === "EADDRINUSE") {
     console.log(chalk.red.bold(`[Dynamic ${_v}] `) + "Port is already in use! Please close any apps using port " + chalk.bold.underline.red(port) + " and try again.");
@@ -70,4 +70,9 @@ fastify.listen({ port }, async (err) => {
   }
   console.log(chalk.bold('Thanks for using SuperNova!'), chalk.red(`Please notice that the proxy that this project uses, ${chalk.red.bold('dynamic, is currently in public BETA')}. please report all issues to the GitHub page of Dynamic, and Supernova. `))
   console.log(chalk.green.bold(`Dynamic ${_v} `) + "live at port " + chalk.bold.green(port));
+  try {
+    await open(URL);
+  } catch (ERR) {
+    console.error(ERR);
+  }
 });
